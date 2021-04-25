@@ -9,14 +9,18 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.(js)$/, use: 'babel-loader'},
-            {test: /\.css$/, use: ['style-loader', 'css-loader']},
+            { test: /\.(js)$/, use: 'babel-loader' },
+            { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
         ]
     },
     mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
-            template: "app/index.html"
+            template: 'app/index.html'
         })
-    ]
+    ],
+    devServer: {
+        inline:true,
+        port: 8080
+    }
 }
